@@ -1,14 +1,38 @@
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase/firebase.config";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [user] = useAuthState(auth);
   const [signOut] = useSignOut(auth);
-
+  console.log(user);
   const handleLogout = async () => {
     await signOut();
   };
+
+  const menu = (
+    <>
+      <li>
+        <NavLink to={"/allrecipes"}>All Recepies</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/about"}>About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/contact"}>Contact Us</NavLink>
+      </li>
+      {user?.email ? (
+        <li>
+          <NavLink to={"/dashboard"}>
+            Dashboard
+          </NavLink>
+        </li>
+      ) : (
+        <div></div>
+      )}
+    </>
+  );
+
   return (
     <div className="navbar bg-base-100 sticky top-0 px-16 z-10">
       <div className="navbar-start">
@@ -31,60 +55,41 @@ export default function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 gap-1"
           >
-            <li>
-              <a>All Recepies</a>
-            </li>
-            <li>
-              <a>About Us</a>
-            </li>
-            <li>
-              <a>Contact Us</a>
-            </li>
+            {menu}
           </ul>
         </div>
-        <a className=" text-xl">daisyUI</a>
+        <Link to={"/"} className="text-3xl text-rose-600 font-semibold">
+          Recipes
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="flex items-center gap-6 px-1">
-          <li>
-            <a>All Recepies</a>
-          </li>
-          <li>
-            <Link to={"/about"}>About Us</Link>
-          </li>
-          <li>
-            <a>Contact Us</a>
-          </li>
+        <ul className="menu menu-horizontal px-1 gap-1">
+          {menu}
         </ul>
       </div>
       {!user?.email ? (
         <div className="navbar-end flex gap-4">
-          <Link to={"/login"} className="btn">
+          <Link to={"/login"} className="btn btn-neutral w-28">
             Login
-          </Link>
-          <Link to={"/register"} className="btn">
-            Registration
           </Link>
         </div>
       ) : (
         <div className="navbar-end flex gap-4">
+          {user?.photoURL ? (
+              <img className="w-12 border-2 rounded-full" src={user?.photoURL} />
+            ) : (
+              <div className="avatar placeholder">
+              <div className="bg-neutral text-neutral-content border-2 rounded-full w-12">
+                <span>UI</span>
+              </div>
+            </div> 
+            )}
           <div>
             <button className="btn" onClick={handleLogout}>
               Logout
             </button>
-          </div>
-          <div>
-            <Link to={"/dashboard"} className="btn">
-              Dashboard
-            </Link>
-          </div>
-
-          <div className="avatar placeholder">
-            <div className="bg-neutral text-neutral-content rounded-full w-8">
-              <span>AS</span>
-            </div>
           </div>
         </div>
       )}
