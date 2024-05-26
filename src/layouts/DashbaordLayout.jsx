@@ -30,6 +30,9 @@ export default function DashbaordLayout() {
           {/* Sidebar content here */}
           <div>
             <li>
+              <Link to={"/dashboard"}>Dashboard Home</Link>
+            </li>
+            <li>
               <Link to={"/dashboard/all-recipes"}>All Recipes</Link>
             </li>
             <li>
