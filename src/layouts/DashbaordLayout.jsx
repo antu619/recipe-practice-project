@@ -11,7 +11,7 @@ export default function DashbaordLayout() {
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col items-center justify-center">
+      <div className="drawer-content">
         <Outlet />
         <label
           htmlFor="my-drawer-2"
@@ -29,6 +29,9 @@ export default function DashbaordLayout() {
         <ul className="menu p-4 w-60 min-h-screen bg-base-200 text-base-content flex flex-col justify-between">
           {/* Sidebar content here */}
           <div>
+            <li>
+              <Link to={"/dashboard/all-recipes"}>All Recipes</Link>
+            </li>
             <li>
               <Link to={"/dashboard/manage-recipes"}>Mangae All Recipes</Link>
             </li>
