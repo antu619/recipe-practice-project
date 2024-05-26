@@ -87,7 +87,7 @@ export default function Navbar() {
             </div> 
             )}
           <div>
-            <button className="btn" onClick={handleLogout}>
+            <button className="btn btn-neutral btn-outline w-28" onClick={handleLogout}>
               Logout
             </button>
           </div>
