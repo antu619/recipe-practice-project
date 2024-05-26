@@ -39,6 +39,7 @@ const AddRecipe = () => {
     if(alert){
       await axios.post("http://localhost:3000/recipes", recipeData);
       toast.success("Successfully Added A New Recipe")
+      form.reset()
     }
   };
   return (

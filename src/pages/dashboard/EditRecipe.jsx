@@ -47,7 +47,7 @@ const EditRecipe = () => {
     console.log(alert)
     if(alert){
     await axios.patch(`http://localhost:3000/recipes/${id}`, recipeData);
-    toast.success("Successfully Updated This Recipe!")
+    toast.success("Successfully Updated A Recipe!")
     }
   };
   return (
