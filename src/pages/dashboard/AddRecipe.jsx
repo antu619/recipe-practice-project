@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 const AddRecipe = () => {
   const [categories, setCategories] = useState();
@@ -33,20 +34,28 @@ const AddRecipe = () => {
       category,
       description,
     };
-
-    await axios.post("http://localhost:3000/recipes", recipeData);
+    const alert = window.confirm('Are you sure! You Want to Add This Recipe');
+    console.log(alert)
+    if(alert){
+      await axios.post("http://localhost:3000/recipes", recipeData);
+      toast.success("Successfully Added A New Recipe")
+    }
   };
   return (
     <div className="w-full px-16 mt-10">
       <h1 className="text-4xl mb-4 text-center">Add Recipe</h1>
       <form onSubmit={handleCreateRecipe} className="max-w-3xl mx-auto mt-16">
         <div className="mb-4">
+        <label>Id </label>
           <input type="text" name="id" className="input-error w-full py-3 px-5 border" placeholder="Id" required />
         </div>
         <div className="mb-4">
+        <label>Title</label>
           <input type="text" name="title" className="input-error w-full py-3 px-5 border" placeholder="Title" required />
         </div>
-        <div className="flex gap-4 mb-4">
+        <div className="flex gap-4 mb-4 w-full">
+          <div className="w-full">
+            <label>Price</label>
           <input
             type="number"
             name="price"
@@ -54,6 +63,9 @@ const AddRecipe = () => {
             placeholder="Price"
             required
           />
+          </div>
+          <div className="w-full">
+            <label>Category</label>
           <select name="category" id="" className="select-error w-full py-3 px-5 border">
           <option disabled selected>Selecrt a Category</option>
             {categories?.map((category) => (
@@ -62,9 +74,11 @@ const AddRecipe = () => {
               </option>
             ))}
           </select>
+          </div>
         </div>
 
         <div className="mb-8">
+          <label>Description</label>
           <textarea name="description" className="textarea-error w-full py-3 px-5 border" placeholder="Description" required />
         </div>
 

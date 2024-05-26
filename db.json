@@ -19,7 +19,7 @@
     {
       "id": "3",
       "title": "Sushi Platter",
-      "price": 24.99,
+      "price": "24.99",
       "description": "A variety of fresh sushi including nigiri, sashimi, and rolls.",
       "image": "https://example.com/images/sushi-platter.jpg",
       "category": "Japanese"
@@ -126,6 +126,132 @@
       "price": "121",
       "category": "Mexican",
       "description": "test descittion"
+    },
+    {
+      "id": "",
+      "title": "",
+      "price": "",
+      "category": "Selecrt a Category",
+      "description": ""
+    },
+    {
+      "id": "",
+      "title": "",
+      "price": "",
+      "category": "Selecrt a Category",
+      "description": ""
+    },
+    {
+      "id": "",
+      "title": "",
+      "price": "",
+      "category": "Selecrt a Category",
+      "description": ""
+    },
+    {
+      "id": "dffdg",
+      "title": "fgasg",
+      "price": "451",
+      "category": "Selecrt a Category",
+      "description": "adfgagag"
+    },
+    {
+      "id": "dffdg",
+      "title": "fgasg",
+      "price": "451",
+      "category": "Selecrt a Category",
+      "description": "adfgagag"
+    },
+    {
+      "id": "dffdg",
+      "title": "fgasg",
+      "price": "451",
+      "category": "Selecrt a Category",
+      "description": "adfgagag"
+    },
+    {
+      "id": "dffdg",
+      "title": "fgasg",
+      "price": "451",
+      "category": "Selecrt a Category",
+      "description": "adfgagag"
+    },
+    {
+      "id": "dffdg",
+      "title": "fgasg",
+      "price": "451",
+      "category": "Selecrt a Category",
+      "description": "adfgagag"
+    },
+    {
+      "id": "xcvcv",
+      "title": "fvfg",
+      "price": "5451",
+      "category": "Selecrt a Category",
+      "description": "asgfggs"
+    },
+    {
+      "id": "ggg",
+      "title": "dsfdsf",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "ggg",
+      "title": "dsfdsf",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "ggg",
+      "title": "dsfdsf",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "ggg",
+      "title": "dsfdsf",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "ggg",
+      "title": "dsfdsf",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "ggg",
+      "title": "Antu",
+      "price": "45",
+      "category": "Mexican",
+      "description": "dsfdsfds"
+    },
+    {
+      "id": "df",
+      "title": "zzzz",
+      "price": "2050",
+      "category": "Japanese",
+      "description": "agagg"
+    },
+    {
+      "id": "df",
+      "title": "Antu Das",
+      "price": "2050",
+      "category": "Japanese",
+      "description": "agagg"
+    },
+    {
+      "id": "ghggh",
+      "title": "Antu33333",
+      "price": "5845",
+      "category": "Japanese",
+      "description": "asrgdfhdfefah"
     }
   ],
   "categories": [

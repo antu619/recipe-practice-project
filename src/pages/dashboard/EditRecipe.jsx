@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
 const EditRecipe = () => {
@@ -42,14 +43,19 @@ const EditRecipe = () => {
       category,
       description,
     };
-
+    const alert = window.confirm('Are you sure! You Want to Update This Recipe');
+    console.log(alert)
+    if(alert){
     await axios.patch(`http://localhost:3000/recipes/${id}`, recipeData);
+    toast.success("Successfully Updated This Recipe!")
+    }
   };
   return (
     <div className="w-full px-16 mt-10">
       <h1 className="text-4xl mb-4 text-center">Update Recipe</h1>
       <form onSubmit={handleCreateRecipe} className="max-w-3xl mx-auto mt-16">
         <div className="mb-4">
+          <label>Title</label>
           <input
             defaultValue={recipeDetails?.title}
             type="text"
@@ -59,6 +65,8 @@ const EditRecipe = () => {
           />
         </div>
         <div className="flex gap-4 mb-4">
+        <div className="w-full">
+          <label>Price</label>
         <input
             type="number"
             name="price"
@@ -66,6 +74,9 @@ const EditRecipe = () => {
             className="input-error w-full py-3 px-5 border"
             required
           />
+        </div>
+          <div className="w-full">
+            <label>Category</label>
           <select name="category" id="" className="select-error w-full py-3 px-5 border">
             {categories?.map((category) => (
               <option
@@ -77,9 +88,11 @@ const EditRecipe = () => {
               </option>
             ))}
           </select>
+          </div>
         </div>
 
         <div className="mb-8">
+          <label>Description</label>
           <textarea
             defaultValue={recipeDetails?.description}
             name="description"
@@ -91,7 +104,7 @@ const EditRecipe = () => {
         <div className="mb-4">
           <input
             type="submit"
-            value={"Add Recipe"}
+            value={"Update Recipe"}
             className="w-full btn py-3 px-5 border btn-neutral"
           />
         </div>
