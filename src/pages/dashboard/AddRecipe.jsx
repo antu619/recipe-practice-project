@@ -37,28 +37,25 @@ const AddRecipe = () => {
     await axios.post("http://localhost:3000/recipes", recipeData);
   };
   return (
-    <div className="w-full px-16">
-      <h1 className="text-4xl mb-4">Add Recipe</h1>
-      <form onSubmit={handleCreateRecipe} className="w-full">
+    <div className="w-full px-16 mt-10">
+      <h1 className="text-4xl mb-4 text-center">Add Recipe</h1>
+      <form onSubmit={handleCreateRecipe} className="max-w-3xl mx-auto mt-16">
         <div className="mb-4">
-          <label htmlFor="">Id </label>
-          <input type="text" name="id" className="w-full py-3 px-5 border" />
+          <input type="text" name="id" className="input-error w-full py-3 px-5 border" placeholder="Id" required />
         </div>
         <div className="mb-4">
-          <label htmlFor="">Title </label>
-          <input type="text" name="title" className="w-full py-3 px-5 border" />
+          <input type="text" name="title" className="input-error w-full py-3 px-5 border" placeholder="Title" required />
         </div>
-        <div className="mb-4">
-          <label htmlFor="">Price </label>
+        <div className="flex gap-4 mb-4">
           <input
             type="number"
             name="price"
-            className="w-full py-3 px-5 border"
+            className="input-error w-full py-3 px-5 border"
+            placeholder="Price"
+            required
           />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="">Cateogry </label>
-          <select name="category" id="" className="w-full py-3 px-5 border">
+          <select name="category" id="" className="select-error w-full py-3 px-5 border">
+          <option disabled selected>Selecrt a Category</option>
             {categories?.map((category) => (
               <option key={category?.id} value={category?.title}>
                 {category?.title}
@@ -67,9 +64,8 @@ const AddRecipe = () => {
           </select>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="">Description </label>
-          <textarea name="description" className="w-full py-3 px-5 border" />
+        <div className="mb-8">
+          <textarea name="description" className="textarea-error w-full py-3 px-5 border" placeholder="Description" required />
         </div>
 
         <div className="mb-4">

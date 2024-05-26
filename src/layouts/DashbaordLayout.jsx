@@ -40,10 +40,10 @@ export default function DashbaordLayout() {
             </li>
           </div>
           <div className="flex gap-4">
-            <Link to={"/"} className="btn btn-neutral">
+            <Link to={"/"} className="btn btn-neutral w-24">
               Home
             </Link>
-            <button className="btn btn-error" onClick={handleLogout}>
+            <button className="btn btn-outline border-rose-600 text-rose-600 hover:bg-rose-600 hover:border-none w-24" onClick={handleLogout}>
               Logout
             </button>
           </div>

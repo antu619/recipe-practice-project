@@ -46,30 +46,27 @@ const EditRecipe = () => {
     await axios.patch(`http://localhost:3000/recipes/${id}`, recipeData);
   };
   return (
-    <div className="w-full px-16">
-      <h1 className="text-4xl mb-4">Add Recipe</h1>
-      <form onSubmit={handleCreateRecipe} className="w-full">
+    <div className="w-full px-16 mt-10">
+      <h1 className="text-4xl mb-4 text-center">Update Recipe</h1>
+      <form onSubmit={handleCreateRecipe} className="max-w-3xl mx-auto mt-16">
         <div className="mb-4">
-          <label htmlFor="">Title </label>
           <input
             defaultValue={recipeDetails?.title}
             type="text"
             name="title"
-            className="w-full py-3 px-5 border"
+            className="input-error w-full py-3 px-5 border"
+            required
           />
         </div>
-        <div className="mb-4">
-          <label htmlFor="">Price </label>
-          <input
+        <div className="flex gap-4 mb-4">
+        <input
             type="number"
             name="price"
             defaultValue={recipeDetails?.price}
-            className="w-full py-3 px-5 border"
+            className="input-error w-full py-3 px-5 border"
+            required
           />
-        </div>
-        <div className="mb-4">
-          <label htmlFor="">Cateogry </label>
-          <select name="category" id="" className="w-full py-3 px-5 border">
+          <select name="category" id="" className="select-error w-full py-3 px-5 border">
             {categories?.map((category) => (
               <option
                 key={category?.title}
@@ -82,12 +79,12 @@ const EditRecipe = () => {
           </select>
         </div>
 
-        <div className="mb-4">
-          <label htmlFor="">Description </label>
+        <div className="mb-8">
           <textarea
             defaultValue={recipeDetails?.description}
             name="description"
-            className="w-full py-3 px-5 border"
+            className="textarea-error w-full py-3 px-5 border"
+            required
           />
         </div>
 
