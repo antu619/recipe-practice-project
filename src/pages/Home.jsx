@@ -3,6 +3,7 @@ import Banner from "../components/home/Banner";
 import { useState } from "react";
 import RecepiCard from "../components/cards/RecepiCard";
 import CategoryCard from "../components/cards/CategoryCard";
+import SectionHeader from "../components/shared/SectionHeader";
 
 export default function Home() {
   const [recipes, setRescipes] = useState();
@@ -36,17 +37,17 @@ export default function Home() {
     <div>
       <Banner />
 
-      <div className="mx-16">
-        <h1 className="text-4xl my-20 text-center">Our Recipe Categories </h1>
-        <div className="grid grid-cols-4 gap-6">
+      <div className="lg:mx-16 md:mx-10 mx-3">
+        <SectionHeader title={"Our Recipe Categories"} />
+        <div className="grid lg:grid-cols-5 md:grid-cols-3 grid-cols-2 gap-6">
           {categoris?.map((category) => (
             <CategoryCard key={category?.id} category={category} />
           ))}
         </div>
       </div>
       <div className="mx-16">
-        <h1 className="text-4xl my-20 text-center">Our Newest Recipes </h1>
-        <div className="grid grid-cols-4 gap-6">
+      <SectionHeader title={"Our Newest Recipes"} />
+        <div className="grid grid-cols-4 gap-10 mb-20">
           {recipes
             ?.reverse()
             ?.slice(0, 4)

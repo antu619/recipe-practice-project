@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="footer p-10 bg-base-200 text-base-content">
+    <footer className="footer justify-items-center p-10 bg-neutral text-neutral-content">
       <nav>
         <h6 className="footer-title">Services</h6>
         <a className="link link-hover">Branding</a>
@@ -25,7 +25,7 @@ export default function Footer() {
         <h6 className="footer-title">Newsletter</h6>
         <fieldset className="form-control w-80">
           <label className="label">
-            <span className="label-text">Enter your email address</span>
+            <span className="label-text text-neutral-content">Enter your email address</span>
           </label>
           <div className="join">
             <input
@@ -33,7 +33,7 @@ export default function Footer() {
               placeholder="username@site.com"
               className="input input-bordered join-item"
             />
-            <button className="btn btn-primary join-item">Subscribe</button>
+            <button className="btn bg-rose-600 hover:bg-rose-600 text-white join-item">Subscribe</button>
           </div>
         </fieldset>
       </form>

@@ -8,14 +8,12 @@ export default function RecepiCard({ recipe }) {
         <img src={pizza} alt="food" className="max-w-50" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{recipe?.title}</h2>
-        <h2 className="card-title">{recipe?.price}</h2>
+        <h2 className="card-title text-rose-600">{recipe?.title}</h2>
         <p>
-          {recipe?.description?.length > 30
-            ? recipe?.description?.slice(0, 30)
-            : recipe?.description}
+          {recipe?.description}
         </p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-between items-center">
+        <p className="font-semibold text-gray-500">Price: ${recipe?.price}</p>
           <div className="badge badge-outline">{recipe?.category}</div>
         </div>
       </div>
